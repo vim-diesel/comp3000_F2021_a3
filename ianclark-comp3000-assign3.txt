@@ -7,13 +7,26 @@ Collaborators:
 1. The command `mkfs.ext4 ...` is potentially dangerous because we could reformat the wrong disk and lose data, or delete the OS.
 
 
-2. 
+2. cd into the 3000fs folder and run `sudo chroot .`
 
 
-3. 
+3. "BusyBox is a software suite that provides several Unix utilities in a single executable file." (Wikipedia)
+BusyBox is being executed to run a bourne (sh) shell. 
+
+"ldconfig creates the necessary links and cache to the most recent shared libraries" (man pages)
+Running ldconfig links the libraries. 
+
+Then, mounting the proc filesystem so that processes are available to our new shell. proc is a special filesystem. 
+"The  proc filesystem is a pseudo-filesystem which provides an interface to kernel data structures.  It is com‐
+       monly mounted at /proc.  Typically, it is mounted automatically by the system, but it can also be mounted man‐
+       ually using a command such as:
+
+           mount -t proc proc /proc
+" (man proc)
 
 
-4. 
+
+4. If the script is being re-run, then this checks if the directory already exists. It then proceeds to unmount and delete the filesystem. 
 
 
 5.
